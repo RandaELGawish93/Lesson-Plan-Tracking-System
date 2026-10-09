@@ -1,6 +1,14 @@
-# -Lesson-Plan-Tracking-System
-Academic accountability and lesson plan tracking system built with Google Apps Script
 # Lesson Plan Tracking System v1.0
+
+Academic accountability and lesson plan tracking system built with Google Apps Script.
+
+## Screenshots
+
+> Screens below show the real interface populated with **fictional sample data** for illustration. No real school, staff or student data is included.
+
+**Automated emails: Thank-You and Warning templates with configurable signature**
+
+![Automated emails: Thank-You and Warning templates with configurable signature](docs/screenshots/lpts-emails.png)
 
 ## Overview
 
