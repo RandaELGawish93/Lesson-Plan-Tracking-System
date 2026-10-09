@@ -14,8 +14,7 @@ function processSundayCheck() {
 
   data.forEach((row, i) => {
 
-    const uploadStatus = String(row[7]).trim();
-Logger.log("Upload Status = [" + uploadStatus + "]"); // Column H
+    const uploadStatus = String(row[7]).trim(); // Column H
     const existingCaseStatus = row[8];
     
     // Skip rows that are already completed

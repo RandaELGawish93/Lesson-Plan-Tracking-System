@@ -33,29 +33,26 @@ function sendSelectedEmail() {
 
   if (settings["Mode"] == "TEST") {
 
-    email = settings["Test Email"];
+    // In TEST mode every email goes to the test address (or to you).
+    email = settings["Test Email"] || Session.getActiveUser().getEmail();
 
   } else {
 
     email = actualEmail;
 
-    switch (division) {
+    // CC the principal of the teacher's division
+    // ("Elementary" / "Elementary School", "Middle School", "High School").
+    const div = String(division).trim().toLowerCase();
 
-      case "Elementary School":
-        cc = settings[String(division).trim()] || "";
-        break;
-
-      case "Middle School":
-        cc = settings[String(division).trim()] || "";
-        break;
-
-      case "High School":
-        cc = settings[String(division).trim()] || "";
-        break;
-
+    if (div.indexOf("elementary") === 0) {
+      cc = settings["Elementary Principal Email"] || "";
+    } else if (div.indexOf("middle") === 0) {
+      cc = settings["Middle School Principal Email"] || "";
+    } else if (div.indexOf("high") === 0) {
+      cc = settings["High School Principal Email"] || "";
     }
 
-    bcc = settings["Academic Deans Office"];
+    bcc = settings["Academic Office Email"] || "";
 
   }
 

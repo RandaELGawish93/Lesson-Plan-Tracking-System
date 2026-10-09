@@ -173,10 +173,10 @@ for (const teacher in teacherStats) {
 
   const compliance =
     total == 0
-      ? 100
+      ? "100%"
       : ((t.thankYou / total) * 100).toFixed(1) + "%";
 
-  output.push([
+  yearlyOutput.push([
     teacher,
     t.thankYou,
     t.amendment,

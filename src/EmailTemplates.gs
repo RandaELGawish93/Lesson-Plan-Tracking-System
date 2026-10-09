@@ -119,7 +119,12 @@ function previewEmail() {
   const grade = row[4];
   const emailType = row[10];
 
-  SpreadsheetApp.getUi().alert("Email Type = [" + emailType + "]");
+  if (!emailType) {
+    SpreadsheetApp.getUi().alert(
+      "This row has no Email Sent type yet. Run Process Sunday Check or Process Pending Cases first."
+    );
+    return;
+  }
 
 const subject = getEmailSubject(emailType);
 
